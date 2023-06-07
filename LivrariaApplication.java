@@ -7,19 +7,23 @@ public class LivrariaApplication {
 
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        System.out.println("Digite seu nome");
-        String nome = scan.nextLine();
 
-        System.out.println("Ola, " + nome + "!");
+        Usuario usuario = new Usuario();
+
+        System.out.println("Digite seu nome");
+        usuario.setNome(scan.nextLine());
+        
+        System.out.println("Ola, " + usuario.getNome() + "!");
 
         System.out.println("Digite sua idade");
-        int idade = scan.nextInt();
+        usuario.setIdade(scan.nextInt());
+       
 
-        if (idade < 18) {
+        if (usuario.getIdade() < 18) {
 
-            System.out.println(nome + ", sua idade é: " + idade + ". Você é menor de idade!");
+            System.out.println(usuario.getNome() + ", sua idade é: " + usuario.getIdade() + ". Você é menor de idade!");
         } else {
-            System.out.println(nome + ", sua idade é: " + idade + ". Você é maior de idade!");
+            System.out.println(usuario.getNome() + ", sua idade é: " + usuario.getIdade() + ". Você é maior de idade!");
 
         }
 
